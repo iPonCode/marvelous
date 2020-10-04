@@ -22,7 +22,8 @@ class ListViewController: UIViewController {
 
     func configureView() {
         // TODO: Configure view
-        view.backgroundColor = .purple
+        view.backgroundColor = UIColor.backGroundList
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     private func setupViewModel() {

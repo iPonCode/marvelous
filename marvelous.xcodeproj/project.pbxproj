@@ -30,6 +30,9 @@
 		D0F3C050252A3B2B00B1A5A6 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C04F252A3B2B00B1A5A6 /* DetailCoordinator.swift */; };
 		D0F3C058252A3BF000B1A5A6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C057252A3BF000B1A5A6 /* DetailViewModel.swift */; };
 		D0F3C05D252A3CFB00B1A5A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C05C252A3CFB00B1A5A6 /* DetailViewController.swift */; };
+		D0F3C073252A687300B1A5A6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C072252A687200B1A5A6 /* Fonts.swift */; };
+		D0F3C078252A68EA00B1A5A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C077252A68EA00B1A5A6 /* Colors.swift */; };
+		D0F3C080252A695100B1A5A6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C07F252A695100B1A5A6 /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		D0F3C04F252A3B2B00B1A5A6 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		D0F3C057252A3BF000B1A5A6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D0F3C05C252A3CFB00B1A5A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D0F3C072252A687200B1A5A6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D0F3C077252A68EA00B1A5A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D0F3C07F252A695100B1A5A6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		D525C0822B010451DDFE4435 /* Pods-marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.debug.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2BF8F25537581798825D97 /* Pods-marvelous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.release.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +217,9 @@
 		D02179C625291CC500F07E8B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				D0F3C07F252A695100B1A5A6 /* AppConfig.swift */,
+				D0F3C077252A68EA00B1A5A6 /* Colors.swift */,
+				D0F3C072252A687200B1A5A6 /* Fonts.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -529,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F3BFD5252A191E00B1A5A6 /* AppCoordinator.swift in Sources */,
+				D0F3C080252A695100B1A5A6 /* AppConfig.swift in Sources */,
 				D0F3C05D252A3CFB00B1A5A6 /* DetailViewController.swift in Sources */,
 				D02179EC2529F4C400F07E8B /* MarvelApi.swift in Sources */,
 				D0F3BFFF252A25F500B1A5A6 /* ListViewModel.swift in Sources */,
@@ -536,6 +546,7 @@
 				D02179E72529F12500F07E8B /* String.swift in Sources */,
 				D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */,
 				D02179E22529F0C600F07E8B /* UIStoryboard+Name.swift in Sources */,
+				D0F3C078252A68EA00B1A5A6 /* Colors.swift in Sources */,
 				D0F3BFE9252A24D100B1A5A6 /* Storyboarded.swift in Sources */,
 				D02179F12529F56200F07E8B /* String+md5.swift in Sources */,
 				D02179FF2529F88000F07E8B /* ErrorResponse.swift in Sources */,
@@ -544,6 +555,7 @@
 				D021797B25291AF600F07E8B /* ListViewController.swift in Sources */,
 				D021797725291AF600F07E8B /* AppDelegate.swift in Sources */,
 				D021797925291AF600F07E8B /* SceneDelegate.swift in Sources */,
+				D0F3C073252A687300B1A5A6 /* Fonts.swift in Sources */,
 				D0F3C058252A3BF000B1A5A6 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
