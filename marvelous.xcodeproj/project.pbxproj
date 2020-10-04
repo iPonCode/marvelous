@@ -10,7 +10,7 @@
 		509B2A057404F79A08501438 /* Pods_marvelous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F84A5775AFB1612BFD0D4DB /* Pods_marvelous.framework */; };
 		D021797725291AF600F07E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021797625291AF600F07E8B /* AppDelegate.swift */; };
 		D021797925291AF600F07E8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021797825291AF600F07E8B /* SceneDelegate.swift */; };
-		D021797B25291AF600F07E8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021797A25291AF600F07E8B /* ViewController.swift */; };
+		D021797B25291AF600F07E8B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021797A25291AF600F07E8B /* ListViewController.swift */; };
 		D021797E25291AF600F07E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D021797C25291AF600F07E8B /* Main.storyboard */; };
 		D021798025291AFA00F07E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D021797F25291AFA00F07E8B /* Assets.xcassets */; };
 		D021798325291AFA00F07E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D021798125291AFA00F07E8B /* LaunchScreen.storyboard */; };
@@ -24,6 +24,9 @@
 		D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179F62529F85700F07E8B /* MarvelDTOs.swift */; };
 		D02179FF2529F88000F07E8B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179FE2529F88000F07E8B /* ErrorResponse.swift */; };
 		D0F3BFD5252A191E00B1A5A6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFD4252A191E00B1A5A6 /* AppCoordinator.swift */; };
+		D0F3BFE4252A22E700B1A5A6 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */; };
+		D0F3BFE9252A24D100B1A5A6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */; };
+		D0F3BFFF252A25F500B1A5A6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFFE252A25F500B1A5A6 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,7 @@
 		D021797325291AF600F07E8B /* marvelous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D021797625291AF600F07E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D021797825291AF600F07E8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D021797A25291AF600F07E8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D021797A25291AF600F07E8B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D021797D25291AF600F07E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D021797F25291AFA00F07E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D021798225291AFA00F07E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +70,9 @@
 		D02179F62529F85700F07E8B /* MarvelDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDTOs.swift; sourceTree = "<group>"; };
 		D02179FE2529F88000F07E8B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D0F3BFD4252A191E00B1A5A6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		D0F3BFFE252A25F500B1A5A6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D525C0822B010451DDFE4435 /* Pods-marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.debug.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2BF8F25537581798825D97 /* Pods-marvelous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.release.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,7 +196,7 @@
 		D02179C225291C9100F07E8B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D021797A25291AF600F07E8B /* ViewController.swift */,
+				D0F3BFDC252A201F00B1A5A6 /* List */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -239,9 +245,10 @@
 		D02179CB25291D2E00F07E8B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D02179E12529F0C600F07E8B /* UIStoryboard+Name.swift */,
 				D02179E62529F12500F07E8B /* String.swift */,
 				D02179F02529F56200F07E8B /* String+md5.swift */,
+				D02179E12529F0C600F07E8B /* UIStoryboard+Name.swift */,
+				D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +260,40 @@
 				D02179FE2529F88000F07E8B /* ErrorResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D0F3BFDC252A201F00B1A5A6 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3BFDD252A203000B1A5A6 /* ViewModel */,
+				D0F3BFDE252A203900B1A5A6 /* Coordinator */,
+				D0F3BFDF252A203F00B1A5A6 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D0F3BFDD252A203000B1A5A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3BFFE252A25F500B1A5A6 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0F3BFDE252A203900B1A5A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D0F3BFDF252A203F00B1A5A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D021797A25291AF600F07E8B /* ListViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F1F169AB941AA3F94F70122B /* Frameworks */ = {
@@ -448,13 +489,16 @@
 			files = (
 				D0F3BFD5252A191E00B1A5A6 /* AppCoordinator.swift in Sources */,
 				D02179EC2529F4C400F07E8B /* MarvelApi.swift in Sources */,
+				D0F3BFFF252A25F500B1A5A6 /* ListViewModel.swift in Sources */,
 				D02179E72529F12500F07E8B /* String.swift in Sources */,
 				D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */,
 				D02179E22529F0C600F07E8B /* UIStoryboard+Name.swift in Sources */,
+				D0F3BFE9252A24D100B1A5A6 /* Storyboarded.swift in Sources */,
 				D02179F12529F56200F07E8B /* String+md5.swift in Sources */,
 				D02179FF2529F88000F07E8B /* ErrorResponse.swift in Sources */,
 				D02179DD2529E49700F07E8B /* Coordinator.swift in Sources */,
-				D021797B25291AF600F07E8B /* ViewController.swift in Sources */,
+				D0F3BFE4252A22E700B1A5A6 /* ListCoordinator.swift in Sources */,
+				D021797B25291AF600F07E8B /* ListViewController.swift in Sources */,
 				D021797725291AF600F07E8B /* AppDelegate.swift in Sources */,
 				D021797925291AF600F07E8B /* SceneDelegate.swift in Sources */,
 			);

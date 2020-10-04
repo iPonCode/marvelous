@@ -24,6 +24,7 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     func childDidStop(_ child: Coordinator?) {
+        
         for (index, coordinator) in
             childCoordinators.enumerated() {
                 // Needs to conform to AnyObject and returns true only if its exactly the same object instance
@@ -35,8 +36,11 @@ class AppCoordinator: NSObject, Coordinator {
     }
     
     func startList() {
-        // TODO: Start ListCoordinator
-        debugPrint("start ListCoordinator here")
+        
+        let child = ListCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
     
 }
@@ -60,8 +64,9 @@ extension AppCoordinator: UINavigationControllerDelegate {
         }
         
         // Third call didStop if for correspondent ViewController
-        // TODO: If firstViewController was ListViewController call chillDidStop
-        
+        if let firstViewController = fromViewController as? ListViewController {
+            childDidStop(firstViewController.coordinator)
+        }
     }
     
 }
