@@ -17,6 +17,8 @@
 		D021798E25291AFA00F07E8B /* marvelousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021798D25291AFA00F07E8B /* marvelousTests.swift */; };
 		D021799925291AFA00F07E8B /* marvelousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021799825291AFA00F07E8B /* marvelousUITests.swift */; };
 		D02179DD2529E49700F07E8B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179DC2529E49700F07E8B /* Coordinator.swift */; };
+		D02179E22529F0C600F07E8B /* UIStoryboard+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179E12529F0C600F07E8B /* UIStoryboard+Name.swift */; };
+		D02179E72529F12500F07E8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179E62529F12500F07E8B /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D021799825291AFA00F07E8B /* marvelousUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelousUITests.swift; sourceTree = "<group>"; };
 		D021799A25291AFA00F07E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02179DC2529E49700F07E8B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D02179E12529F0C600F07E8B /* UIStoryboard+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Name.swift"; sourceTree = "<group>"; };
+		D02179E62529F12500F07E8B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D525C0822B010451DDFE4435 /* Pods-marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.debug.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2BF8F25537581798825D97 /* Pods-marvelous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.release.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +226,8 @@
 		D02179CB25291D2E00F07E8B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D02179E12529F0C600F07E8B /* UIStoryboard+Name.swift */,
+				D02179E62529F12500F07E8B /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +423,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02179E72529F12500F07E8B /* String.swift in Sources */,
+				D02179E22529F0C600F07E8B /* UIStoryboard+Name.swift in Sources */,
 				D02179DD2529E49700F07E8B /* Coordinator.swift in Sources */,
 				D021797B25291AF600F07E8B /* ViewController.swift in Sources */,
 				D021797725291AF600F07E8B /* AppDelegate.swift in Sources */,
