@@ -27,7 +27,7 @@ class ListCoordinator: Coordinator {
     
     func didStop() {
         parentCoordinator?.childDidStop(self)
-        debugPrint("I'm on didStop() -> go to startNextModule()…")
+        debugPrint("I'm on didStop()")
     }
     
     func childDidStop(_ child: Coordinator?) {
@@ -35,6 +35,7 @@ class ListCoordinator: Coordinator {
             childCoordinators.enumerated() {
                 // needs conform to AnyObject and returns true only if its exactly the same object instance
                 if coordinator === child {
+                    navigationController.popViewController(animated: true)
                     childCoordinators.remove(at: index)
                     break
                 }
@@ -45,18 +46,34 @@ class ListCoordinator: Coordinator {
         let vc = ListViewController.instantiate(storyboardName: UIStoryboard.Name.main.rawValue)
         if let viewController = vc {
             let viewModel = ListViewModel()
-
-            viewModel.finishModule
+            
+            viewModel.action
                 .asObserver()
-                .subscribe(onNext: { (finished) in
-                    debugPrint("ListCoordinator calling didStop…")
-                    self.didStop()
+                .subscribe(onNext: { (action) in
+                    switch action {
+                    case .openDetail(let id):
+                        self.openDetail(id)
+                    case .finish:
+                        break
+                    case .none:
+                        break
+                    }
                 }).disposed(by: disposeBag)
 
             viewController.viewModel = viewModel
             viewController.coordinator = self
             navigationController.pushViewController(viewController, animated: true)
         }
+    }
+    
+    private func openDetail(_ id: Int?) {
+        
+        guard let id = id else { return }
+        let child = DetailCoordinator(navigationController: navigationController, id: id)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+
     }
 
 }

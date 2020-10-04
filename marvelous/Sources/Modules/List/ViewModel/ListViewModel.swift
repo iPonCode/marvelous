@@ -8,14 +8,33 @@
 import Foundation
 import RxSwift
 
-enum ListViewState : Equatable {
+enum ListAction : Equatable {
+    case openDetail(Int?)
+    case finish
+    case none
+    
+    static func == (lhs: ListAction, rhs: ListAction) -> Bool {
+        switch (lhs, rhs) {
+        case (let .openDetail(lhsId), let .openDetail(rhsId)):
+            return lhsId == rhsId
+        case (.finish, .finish):
+            return true
+        case (.none, .none):
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+enum ListState : Equatable {
     
     case loading
     case error (Error)
     case loaded
     // TODO: maybe will need to additional checks (like jailbroken device, App needToUpdate, etc..)
 
-    static func == (lhs: ListViewState, rhs: ListViewState) -> Bool { // to conform Equatable
+    static func == (lhs: ListState, rhs: ListState) -> Bool { // to conform Equatable
         switch (lhs, rhs) {
             case (.loading, .loading): return true
             case (let .error(lhsError), let .error(rhsError)):
@@ -27,38 +46,30 @@ enum ListViewState : Equatable {
 }
 
 protocol ListViewModelProtocol {
-    var state: PublishSubject<ListViewState> { get }
-    var finishModule: PublishSubject<Bool> { get }
+    var state: PublishSubject<ListState> { get }
+    var action: PublishSubject<ListAction> { get }
     
     func requestData(scheduler: SchedulerType)
-    func navigateNextModule()
 }
 
 class ListViewModel: ListViewModelProtocol {
     
     // MARK: - Outputs
-    var state: PublishSubject<ListViewState>
-    var finishModule: PublishSubject<Bool>
+    var state: PublishSubject<ListState>
+    var action: PublishSubject<ListAction>
         
     init() {
-        self.state = PublishSubject<ListViewState>()
-        self.finishModule = PublishSubject<Bool>()
+        self.state = PublishSubject<ListState>()
+        self.action = PublishSubject<ListAction>()
     }
 
     func requestData(scheduler: SchedulerType) {
         
         // TODO: requestData from webservice
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.state.onNext(.loading)
-        }
-        
+        self.state.onNext(.loading)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.state.onNext(.loaded)
         }
-    }
-
-    func navigateNextModule() {
-        finishModule.onNext(true)
     }
 
 }

@@ -27,6 +27,9 @@
 		D0F3BFE4252A22E700B1A5A6 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */; };
 		D0F3BFE9252A24D100B1A5A6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */; };
 		D0F3BFFF252A25F500B1A5A6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFFE252A25F500B1A5A6 /* ListViewModel.swift */; };
+		D0F3C050252A3B2B00B1A5A6 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C04F252A3B2B00B1A5A6 /* DetailCoordinator.swift */; };
+		D0F3C058252A3BF000B1A5A6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C057252A3BF000B1A5A6 /* DetailViewModel.swift */; };
+		D0F3C05D252A3CFB00B1A5A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C05C252A3CFB00B1A5A6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		D0F3BFFE252A25F500B1A5A6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D0F3C04F252A3B2B00B1A5A6 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		D0F3C057252A3BF000B1A5A6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D0F3C05C252A3CFB00B1A5A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D525C0822B010451DDFE4435 /* Pods-marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.debug.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2BF8F25537581798825D97 /* Pods-marvelous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.release.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F3BFDC252A201F00B1A5A6 /* List */,
+				D0F3C011252A365200B1A5A6 /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -265,8 +272,8 @@
 		D0F3BFDC252A201F00B1A5A6 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D0F3BFDD252A203000B1A5A6 /* ViewModel */,
 				D0F3BFDE252A203900B1A5A6 /* Coordinator */,
+				D0F3BFDD252A203000B1A5A6 /* ViewModel */,
 				D0F3BFDF252A203F00B1A5A6 /* View */,
 			);
 			path = List;
@@ -294,6 +301,40 @@
 				D021797A25291AF600F07E8B /* ListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D0F3C011252A365200B1A5A6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3C014252A366D00B1A5A6 /* Coordinator */,
+				D0F3C013252A366000B1A5A6 /* ViewModel */,
+				D0F3C012252A365900B1A5A6 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D0F3C012252A365900B1A5A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3C05C252A3CFB00B1A5A6 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0F3C013252A366000B1A5A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3C057252A3BF000B1A5A6 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0F3C014252A366D00B1A5A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3C04F252A3B2B00B1A5A6 /* DetailCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		F1F169AB941AA3F94F70122B /* Frameworks */ = {
@@ -488,8 +529,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F3BFD5252A191E00B1A5A6 /* AppCoordinator.swift in Sources */,
+				D0F3C05D252A3CFB00B1A5A6 /* DetailViewController.swift in Sources */,
 				D02179EC2529F4C400F07E8B /* MarvelApi.swift in Sources */,
 				D0F3BFFF252A25F500B1A5A6 /* ListViewModel.swift in Sources */,
+				D0F3C050252A3B2B00B1A5A6 /* DetailCoordinator.swift in Sources */,
 				D02179E72529F12500F07E8B /* String.swift in Sources */,
 				D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */,
 				D02179E22529F0C600F07E8B /* UIStoryboard+Name.swift in Sources */,
@@ -501,6 +544,7 @@
 				D021797B25291AF600F07E8B /* ListViewController.swift in Sources */,
 				D021797725291AF600F07E8B /* AppDelegate.swift in Sources */,
 				D021797925291AF600F07E8B /* SceneDelegate.swift in Sources */,
+				D0F3C058252A3BF000B1A5A6 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
