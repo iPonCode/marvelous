@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import RxSwift
-import Alamofire
-import AlamofireImage
 
 class ViewController: UIViewController {
 
