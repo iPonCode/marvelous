@@ -8,5 +8,7 @@ target 'marvelous' do
   # Pods for marvelous
 
   pod 'RxSwift', '5.1.1'
+  pod 'Alamofire', '5.0.2'
+  pod 'AlamofireImage', '4.0.3'
 
 end
