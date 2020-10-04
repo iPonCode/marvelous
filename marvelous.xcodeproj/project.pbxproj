@@ -21,6 +21,8 @@
 		D02179E72529F12500F07E8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179E62529F12500F07E8B /* String.swift */; };
 		D02179EC2529F4C400F07E8B /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179EB2529F4C400F07E8B /* MarvelApi.swift */; };
 		D02179F12529F56200F07E8B /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179F02529F56200F07E8B /* String+md5.swift */; };
+		D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179F62529F85700F07E8B /* MarvelDTOs.swift */; };
+		D02179FF2529F88000F07E8B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179FE2529F88000F07E8B /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		D02179E62529F12500F07E8B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D02179EB2529F4C400F07E8B /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
 		D02179F02529F56200F07E8B /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
+		D02179F62529F85700F07E8B /* MarvelDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDTOs.swift; sourceTree = "<group>"; };
+		D02179FE2529F88000F07E8B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D525C0822B010451DDFE4435 /* Pods-marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.debug.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2BF8F25537581798825D97 /* Pods-marvelous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.release.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +219,7 @@
 		D02179C925291D1F00F07E8B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D02179F52529F7DA00F07E8B /* Models */,
 				D02179CA25291D2600F07E8B /* Utils */,
 				D02179CB25291D2E00F07E8B /* Extensions */,
 			);
@@ -236,6 +241,15 @@
 				D02179F02529F56200F07E8B /* String+md5.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D02179F52529F7DA00F07E8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D02179F62529F85700F07E8B /* MarvelDTOs.swift */,
+				D02179FE2529F88000F07E8B /* ErrorResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F1F169AB941AA3F94F70122B /* Frameworks */ = {
@@ -431,8 +445,10 @@
 			files = (
 				D02179EC2529F4C400F07E8B /* MarvelApi.swift in Sources */,
 				D02179E72529F12500F07E8B /* String.swift in Sources */,
+				D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */,
 				D02179E22529F0C600F07E8B /* UIStoryboard+Name.swift in Sources */,
 				D02179F12529F56200F07E8B /* String+md5.swift in Sources */,
+				D02179FF2529F88000F07E8B /* ErrorResponse.swift in Sources */,
 				D02179DD2529E49700F07E8B /* Coordinator.swift in Sources */,
 				D021797B25291AF600F07E8B /* ViewController.swift in Sources */,
 				D021797725291AF600F07E8B /* AppDelegate.swift in Sources */,
