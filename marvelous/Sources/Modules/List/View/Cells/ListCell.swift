@@ -11,7 +11,7 @@ import AlamofireImage
 protocol ListCellProtocol {
     func configure(id: Int, imageUrl: String?,
                    name: String, description: String,
-                   comics: String, events: String, series: String)
+                   comics: Int, events: Int, series: Int)
 }
 
 class ListCell: UITableViewCell, ListCellProtocol {
@@ -30,13 +30,13 @@ class ListCell: UITableViewCell, ListCellProtocol {
     
     func configure(id: Int, imageUrl: String?,
                    name: String, description: String,
-                   comics: String, events: String, series: String) {
+                   comics: Int, events: Int, series: Int) {
         
-        charName.text = "Character Name"
-        charDescription.text = "Character Multiline description goes here, Character Multiline description goes here, Character Multiline description goes here"
-        numComics.text = "33"
-        numEvents.text = "22"
-        numSeries.text = "11"
+        charName.text = name
+        charDescription.text = description
+        numComics.text = String(format: "%d comics | ", comics)
+        numEvents.text = String(format: "%d events" , events)
+        numSeries.text = String(format: " | %d series", series)
 
         // Set the default background image if imageUrl doesn't exist
         guard let bgUrl = imageUrl else {

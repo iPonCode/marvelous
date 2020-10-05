@@ -33,25 +33,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-SN-0Vb">
-                        <rect key="frame" x="76" y="125.5" width="262" height="20.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-SN-0Vb">
+                        <rect key="frame" x="83.5" y="125.5" width="247.5" height="20.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 comics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-wi-zga" userLabel="numComics">
-                                <rect key="frame" x="0.0" y="0.0" width="77" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 comics | " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-wi-zga" userLabel="numComics">
+                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="20.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82u-Fl-eDa" userLabel="numEvents">
-                                <rect key="frame" x="102" y="0.0" width="75" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82u-Fl-eDa" userLabel="numEvents">
+                                <rect key="frame" x="94.5" y="0.0" width="75" height="20.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlW-Nb-qpS" userLabel="numSeries">
-                                <rect key="frame" x="202" y="0.0" width="60" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" | 3 series" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlW-Nb-qpS" userLabel="numSeries">
+                                <rect key="frame" x="174.5" y="0.0" width="73" height="20.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -67,6 +67,7 @@
                     <constraint firstItem="kNA-SN-0Vb" firstAttribute="top" secondItem="JYc-dN-lBW" secondAttribute="bottom" constant="8" id="K1E-eI-J81"/>
                     <constraint firstAttribute="trailing" secondItem="JYc-dN-lBW" secondAttribute="trailing" constant="16" id="Voy-On-uId"/>
                     <constraint firstAttribute="trailing" secondItem="ivw-al-six" secondAttribute="trailing" constant="8" id="WW4-IU-CTV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kNA-SN-0Vb" secondAttribute="trailing" constant="16" id="Xf4-Us-0B7"/>
                     <constraint firstAttribute="bottom" secondItem="4Q3-Gk-ENc" secondAttribute="bottom" id="YED-Tb-I2h"/>
                     <constraint firstItem="4Q3-Gk-ENc" firstAttribute="leading" secondItem="b5G-tl-qxe" secondAttribute="leading" id="bU3-rH-aGt"/>
                     <constraint firstAttribute="trailing" secondItem="4Q3-Gk-ENc" secondAttribute="trailing" id="eZt-H7-oNU"/>
@@ -75,6 +76,7 @@
                     <constraint firstItem="4Q3-Gk-ENc" firstAttribute="top" secondItem="b5G-tl-qxe" secondAttribute="top" id="kA1-d1-cyC"/>
                     <constraint firstItem="JYc-dN-lBW" firstAttribute="top" secondItem="ivw-al-six" secondAttribute="bottom" constant="8" id="lUH-dp-XNa"/>
                     <constraint firstItem="kNA-SN-0Vb" firstAttribute="centerX" secondItem="b5G-tl-qxe" secondAttribute="centerX" id="neY-sd-KeB"/>
+                    <constraint firstItem="kNA-SN-0Vb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b5G-tl-qxe" secondAttribute="leading" constant="16" id="oVk-tk-QLT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
