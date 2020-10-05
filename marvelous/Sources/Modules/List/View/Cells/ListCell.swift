@@ -32,6 +32,13 @@ class ListCell: UITableViewCell, ListCellProtocol {
                    name: String, description: String,
                    comics: Int, events: Int, series: Int) {
         
+        charName.font = UIFont.AppFont.largeTitle
+        charName.textColor = UIColor.highlighted
+        charDescription.font = UIFont.AppFont.bodyText
+        numComics.font = UIFont.AppFont.bodyText
+        numEvents.font = UIFont.AppFont.bodyText
+        numSeries.font = UIFont.AppFont.bodyText
+
         charName.text = name
         charDescription.text = description
         numComics.text = String(format: "%d comics | ", comics)

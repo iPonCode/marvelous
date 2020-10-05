@@ -53,6 +53,7 @@ class ListViewController: UIViewController {
                     self.showErrorMessage(error)
                 case .loaded:
                     debugPrint("Loaded State in ListViewController")
+                    self.tableView.reloadData()
                 }
             }).disposed(by: disposeBag)
         
@@ -60,7 +61,7 @@ class ListViewController: UIViewController {
         viewModel.requestData(scheduler: MainScheduler.instance)
     }
     
-    private func showErrorMessage(_ error: Error) { // TODO: Show error message to user
+    private func showErrorMessage(_ error: ErrorResponse) { // TODO: Show error message to user
         debugPrint("showErrorMessage() in ListViewController…")
     }
     
@@ -79,26 +80,23 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.chars.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: listCellIdAndNibName, for: indexPath) as? ListCell {
         
-            //let charty = arrayofcharacters[indexPath.row]
-            //let url = String(format: "%@.%@",
-              //               String(charty.thumbnail!.path),
-              //               String(charty.thumbnail!.thumbnailExtension))
-            //cell.configure(id: charty.id, imageUrl: url,
-              //             name: charty.name, description: charty.reultDescription,
-              //             comics: charty.comics.items.count,
-              //             events: charty.events.count,
-              //             series: charty.series.count)
-
-            cell.configure(id: 1, imageUrl: nil, name: "Test name",
-                           description: "Test multiline description, Test multiline description, Test multiline description, Test multiline description, Test multiline description, Test multiline description, Test multiline description, Test multiline description, Test multiline description, Test multiline description, test multiline description ",
-                           comics: 333, events: 222, series: 111)
+            guard let charty = viewModel?.chars[indexPath.row] else { return UITableViewCell() }
+            let url = String(format: "%@.%@",
+                             String(charty.thumbnail?.path ?? ""),
+                             String(charty.thumbnail?.thumbnailExtension ?? ""))
+            cell.configure(id: charty.id, imageUrl: url,
+                           name: charty.name ?? "",
+                           description: charty.resultDescription ?? "This character has an empty or nil description, this is a text to supply it …",
+                           comics: charty.comics.items.count,
+                           events: charty.events?.count ?? 0,
+                           series: charty.events?.count ?? 0)
             cell.tag = indexPath.row
             return cell
         }
