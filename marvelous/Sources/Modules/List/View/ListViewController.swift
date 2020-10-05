@@ -10,6 +10,8 @@ import RxSwift
 
 class ListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     weak var coordinator: ListCoordinator?
     var viewModel: ListViewModel?
     let disposeBag = DisposeBag()

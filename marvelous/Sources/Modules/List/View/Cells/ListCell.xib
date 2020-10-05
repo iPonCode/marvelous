@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3wz-mw-in3" customClass="ListCell" customModule="marvelous" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3wz-mw-in3" id="b5G-tl-qxe">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.grid.4x3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Q3-Gk-ENc" userLabel="bgImage">
+                        <rect key="frame" x="0.0" y="2.5" width="414" height="149"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Character Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivw-al-six" userLabel="charName">
+                        <rect key="frame" x="8" y="8" width="398" height="20.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="This character has an empty or nil description, this is a text to supply it …" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYc-dN-lBW" userLabel="charDescription">
+                        <rect key="frame" x="16" y="36.5" width="382" height="81"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-SN-0Vb">
+                        <rect key="frame" x="76" y="125.5" width="262" height="20.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 comics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-wi-zga" userLabel="numComics">
+                                <rect key="frame" x="0.0" y="0.0" width="77" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82u-Fl-eDa" userLabel="numEvents">
+                                <rect key="frame" x="102" y="0.0" width="75" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlW-Nb-qpS" userLabel="numSeries">
+                                <rect key="frame" x="202" y="0.0" width="60" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JYc-dN-lBW" firstAttribute="leading" secondItem="b5G-tl-qxe" secondAttribute="leading" constant="16" id="9I9-ak-fZd"/>
+                    <constraint firstItem="ivw-al-six" firstAttribute="top" secondItem="b5G-tl-qxe" secondAttribute="top" constant="8" id="FJU-OE-jqh"/>
+                    <constraint firstItem="kNA-SN-0Vb" firstAttribute="top" secondItem="JYc-dN-lBW" secondAttribute="bottom" constant="8" id="K1E-eI-J81"/>
+                    <constraint firstAttribute="trailing" secondItem="JYc-dN-lBW" secondAttribute="trailing" constant="16" id="Voy-On-uId"/>
+                    <constraint firstAttribute="trailing" secondItem="ivw-al-six" secondAttribute="trailing" constant="8" id="WW4-IU-CTV"/>
+                    <constraint firstAttribute="bottom" secondItem="4Q3-Gk-ENc" secondAttribute="bottom" id="YED-Tb-I2h"/>
+                    <constraint firstItem="4Q3-Gk-ENc" firstAttribute="leading" secondItem="b5G-tl-qxe" secondAttribute="leading" id="bU3-rH-aGt"/>
+                    <constraint firstAttribute="trailing" secondItem="4Q3-Gk-ENc" secondAttribute="trailing" id="eZt-H7-oNU"/>
+                    <constraint firstAttribute="bottom" secondItem="kNA-SN-0Vb" secondAttribute="bottom" constant="8" id="gGV-fh-XkF"/>
+                    <constraint firstItem="ivw-al-six" firstAttribute="leading" secondItem="b5G-tl-qxe" secondAttribute="leading" constant="8" id="k3d-C0-e8v"/>
+                    <constraint firstItem="4Q3-Gk-ENc" firstAttribute="top" secondItem="b5G-tl-qxe" secondAttribute="top" id="kA1-d1-cyC"/>
+                    <constraint firstItem="JYc-dN-lBW" firstAttribute="top" secondItem="ivw-al-six" secondAttribute="bottom" constant="8" id="lUH-dp-XNa"/>
+                    <constraint firstItem="kNA-SN-0Vb" firstAttribute="centerX" secondItem="b5G-tl-qxe" secondAttribute="centerX" id="neY-sd-KeB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bgImage" destination="4Q3-Gk-ENc" id="pWJ-4c-VWK"/>
+                <outlet property="charDescription" destination="JYc-dN-lBW" id="TJr-9H-32G"/>
+                <outlet property="charName" destination="ivw-al-six" id="ED8-uz-UQz"/>
+                <outlet property="numComics" destination="7y1-wi-zga" id="79t-ch-U4a"/>
+                <outlet property="numEvents" destination="82u-Fl-eDa" id="3D1-tV-uj4"/>
+                <outlet property="numSeries" destination="QlW-Nb-qpS" id="GDN-S8-4dp"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="60.9375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square.grid.4x3.fill" catalog="system" width="128" height="87"/>
+    </resources>
+</document>

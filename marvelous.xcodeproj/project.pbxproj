@@ -33,6 +33,8 @@
 		D0F3C073252A687300B1A5A6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C072252A687200B1A5A6 /* Fonts.swift */; };
 		D0F3C078252A68EA00B1A5A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C077252A68EA00B1A5A6 /* Colors.swift */; };
 		D0F3C080252A695100B1A5A6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C07F252A695100B1A5A6 /* AppConfig.swift */; };
+		D0F3C09E252A8D4C00B1A5A6 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F3C09D252A8D4C00B1A5A6 /* ListCell.xib */; };
+		D0F3C0A3252A95F500B1A5A6 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3C0A2252A95F500B1A5A6 /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		D0F3C072252A687200B1A5A6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		D0F3C077252A68EA00B1A5A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D0F3C07F252A695100B1A5A6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		D0F3C09D252A8D4C00B1A5A6 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		D0F3C0A2252A95F500B1A5A6 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		D525C0822B010451DDFE4435 /* Pods-marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.debug.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2BF8F25537581798825D97 /* Pods-marvelous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelous.release.xcconfig"; path = "Target Support Files/Pods-marvelous/Pods-marvelous.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -307,6 +311,7 @@
 		D0F3BFDF252A203F00B1A5A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0F3C094252A8C3900B1A5A6 /* Cells */,
 				D021797A25291AF600F07E8B /* ListViewController.swift */,
 			);
 			path = View;
@@ -344,6 +349,15 @@
 				D0F3C04F252A3B2B00B1A5A6 /* DetailCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D0F3C094252A8C3900B1A5A6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3C09D252A8D4C00B1A5A6 /* ListCell.xib */,
+				D0F3C0A2252A95F500B1A5A6 /* ListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F1F169AB941AA3F94F70122B /* Frameworks */ = {
@@ -469,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D021798325291AFA00F07E8B /* LaunchScreen.storyboard in Resources */,
+				D0F3C09E252A8D4C00B1A5A6 /* ListCell.xib in Resources */,
 				D021798025291AFA00F07E8B /* Assets.xcassets in Resources */,
 				D021797E25291AF600F07E8B /* Main.storyboard in Resources */,
 			);
@@ -540,6 +555,7 @@
 				D0F3BFD5252A191E00B1A5A6 /* AppCoordinator.swift in Sources */,
 				D0F3C080252A695100B1A5A6 /* AppConfig.swift in Sources */,
 				D0F3C05D252A3CFB00B1A5A6 /* DetailViewController.swift in Sources */,
+				D0F3C0A3252A95F500B1A5A6 /* ListCell.swift in Sources */,
 				D02179EC2529F4C400F07E8B /* MarvelApi.swift in Sources */,
 				D0F3BFFF252A25F500B1A5A6 /* ListViewModel.swift in Sources */,
 				D0F3C050252A3B2B00B1A5A6 /* DetailCoordinator.swift in Sources */,
