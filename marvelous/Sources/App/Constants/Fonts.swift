@@ -24,6 +24,19 @@ extension UIFont {
             }
         }
         
+        static var bodyText: UIFont {
+            get {
+                let fontSize = UIFont.preferredFont(forTextStyle: .body).pointSize
+                if let descriptor = UIFont.systemFont(ofSize: fontSize, weight: .regular)
+                    .fontDescriptor.withDesign(.rounded) {
+                    return UIFont(descriptor: descriptor, size: fontSize)
+
+                } else {
+                    return UIFont.preferredFont(forTextStyle: .body)
+                }
+            }
+        }
+        
         static var compactTitle: UIFont {
             get {
                 let fontSize = UIFont.preferredFont(forTextStyle: .title1).pointSize

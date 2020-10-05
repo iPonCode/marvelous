@@ -17,32 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="5Is-ab-FMh">
-                                <rect key="frame" x="111" y="419.5" width="192" height="57.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is ListViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI7-0B-CXW">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnW-Ra-tkX">
-                                        <rect key="frame" x="5" y="27.5" width="182" height="30"/>
-                                        <state key="normal" title="Go to DetailViewController"/>
-                                        <connections>
-                                            <action selector="goToDetail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rub-n2-kOC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9JS-5q-pm8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Is-ab-FMh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Yq-mm-BH5"/>
-                            <constraint firstItem="5Is-ab-FMh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YAn-Zp-gJV"/>
+                            <constraint firstItem="9JS-5q-pm8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JUC-7c-skj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9JS-5q-pm8" secondAttribute="bottom" id="UoW-IP-MFI"/>
+                            <constraint firstItem="9JS-5q-pm8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y7G-6O-wKy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9JS-5q-pm8" secondAttribute="trailing" id="oaY-Bz-SPf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="9JS-5q-pm8" id="2dW-xA-kxO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

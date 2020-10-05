@@ -11,14 +11,14 @@ import RxSwift
 enum DetailState : Equatable {
     
     case loading
-    case error (Error)
+    case error (ErrorResponse)
     case loaded
 
     static func == (lhs: DetailState, rhs: DetailState) -> Bool { // to conform Equatable
         switch (lhs, rhs) {
             case (.loading, .loading): return true
             case (let .error(lhsError), let .error(rhsError)):
-                return lhsError.localizedDescription == rhsError.localizedDescription
+                return lhsError.code == rhsError.code
             case (.loaded, .loaded): return true
             default: return false
         }

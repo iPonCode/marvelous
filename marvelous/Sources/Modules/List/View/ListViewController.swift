@@ -10,6 +10,10 @@ import RxSwift
 
 class ListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let listCellIdAndNibName = "ListCell"
+
     weak var coordinator: ListCoordinator?
     var viewModel: ListViewModel?
     let disposeBag = DisposeBag()
@@ -21,9 +25,16 @@ class ListViewController: UIViewController {
     }
 
     func configureView() {
+        
         // TODO: Configure view
         view.backgroundColor = UIColor.backGroundList
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        // Configure tableView
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: listCellIdAndNibName, bundle: nil),
+                           forCellReuseIdentifier: listCellIdAndNibName)
     }
     
     private func setupViewModel() {
@@ -42,6 +53,7 @@ class ListViewController: UIViewController {
                     self.showErrorMessage(error)
                 case .loaded:
                     debugPrint("Loaded State in ListViewController")
+                    self.tableView.reloadData()
                 }
             }).disposed(by: disposeBag)
         
@@ -49,13 +61,60 @@ class ListViewController: UIViewController {
         viewModel.requestData(scheduler: MainScheduler.instance)
     }
     
-    private func showErrorMessage(_ error: Error) { // TODO: Show error message to user
+    private func showErrorMessage(_ error: ErrorResponse) { // TODO: Show error message to user
         debugPrint("showErrorMessage() in ListViewController…")
     }
     
-    @IBAction func goToDetail(_ sender: Any) {
-        // TODO: Navigate to Detail. Provisional button to show DetailViewController
-        debugPrint("Go To DetailViewController tapped!")
-        viewModel?.action.onNext(.openDetail(1))
+}
+
+// MARK: - Methods of UITableViewDataSource protocol
+
+extension ListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 154
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.chars.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: listCellIdAndNibName, for: indexPath) as? ListCell {
+        
+            guard let charty = viewModel?.chars[indexPath.row] else { return UITableViewCell() }
+            let url = String(format: "%@.%@",
+                             String(charty.thumbnail?.path ?? ""),
+                             String(charty.thumbnail?.thumbnailExtension ?? ""))
+            cell.configure(id: charty.id, imageUrl: url,
+                           name: charty.name ?? "",
+                           description: charty.resultDescription ?? "This character has an empty or nil description, this is a text to supply it …",
+                           comics: charty.comics.items.count,
+                           events: charty.events?.count ?? 0,
+                           series: charty.events?.count ?? 0)
+            cell.tag = indexPath.row
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+
+}
+
+// MARK: - Methods of UITableViewDelegate protocol
+
+extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: Navigate to Detail
+        //tableView.deselectRow(at: indexPath, animated: true)
+        //searchBar.resignFirstResponder()
+        //let charId = arrayofcharacters[indexPath.row].id
+        //viewModel?.action.onNext(.openDetail(charId))
     }
 }

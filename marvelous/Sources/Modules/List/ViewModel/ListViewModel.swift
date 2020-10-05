@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Alamofire
 
 enum ListAction : Equatable {
     case openDetail(Int?)
@@ -30,7 +31,7 @@ enum ListAction : Equatable {
 enum ListState : Equatable {
     
     case loading
-    case error (Error)
+    case error (ErrorResponse)
     case loaded
     // TODO: maybe will need to additional checks (like jailbroken device, App needToUpdate, etc..)
 
@@ -38,7 +39,7 @@ enum ListState : Equatable {
         switch (lhs, rhs) {
             case (.loading, .loading): return true
             case (let .error(lhsError), let .error(rhsError)):
-                return lhsError.localizedDescription == rhsError.localizedDescription
+                return lhsError.code == rhsError.code
             case (.loaded, .loaded): return true
             default: return false
         }
@@ -57,6 +58,9 @@ class ListViewModel: ListViewModelProtocol {
     // MARK: - Outputs
     var state: PublishSubject<ListState>
     var action: PublishSubject<ListAction>
+    
+    var chars = [CharacterListItemDTO]()
+    private var serverError = ErrorResponse()
         
     init() {
         self.state = PublishSubject<ListState>()
@@ -65,11 +69,38 @@ class ListViewModel: ListViewModelProtocol {
 
     func requestData(scheduler: SchedulerType) {
         
-        // TODO: requestData from webservice
-        self.state.onNext(.loading)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.state.onNext(.loaded)
-        }
-    }
+        state.onNext(.loading)
+        guard let url = URL(string: MarvelApi.getCharactersListUrl()) else { return }
 
+        AF.request(url).responseJSON { response in
+        
+            guard let serverData = response.data,
+                  let networkResponse = try? JSONDecoder().decode(NetworkListResponseDTO.self, from: serverData) else {
+        
+                guard let serverData = response.data,
+                      let errorObject = try? JSONDecoder().decode(ErrorResponse.self, from: serverData) else {
+                    
+                    // Cannot decode the current error message, save generic error when don't know what error it is
+                    self.serverError.code = "Generic"
+                    self.serverError.message = "Generic server error - Cannot decode error message"
+                    self.state.onNext(.error(self.serverError))
+                    return
+                }
+        
+                // Save any other error, when know what error it is
+                self.serverError = errorObject
+                self.state.onNext(.error(self.serverError))
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let characters = networkResponse.data?.results {
+                    self.chars = characters
+                    self.state.onNext(.loaded)
+                }
+            }
+        }
+        
+    }
+    
 }

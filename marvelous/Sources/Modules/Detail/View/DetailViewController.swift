@@ -87,7 +87,7 @@ class DetailViewController: UIViewController {
         viewModel.requestData(scheduler: MainScheduler.instance)
     }
     
-    private func showErrorMessage(_ error: Error) { // TODO: Show error message to user
+    private func showErrorMessage(_ error: ErrorResponse) { // TODO: Show error message to user
         debugPrint("showErrorMessage() in DetailViewController…")
     }
     
