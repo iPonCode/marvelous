@@ -20,50 +20,32 @@ class DetailViewController: UIViewController {
         setupViewModel()
     }
 
-    func configureView() {
-        // TODO: Configure view
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Use this because need to trigger finishModule PublishSubject when user tap back BarButton
+        // but wants to use the default iOS appearance for backBarButton (re-defined in AppDelegate)
+        if self.isMovingFromParent {
+            backTapped()
+        }
+    }
+
+    private func configureView() {
+
         view.backgroundColor = UIColor.backGroundDetail
         configureNavBar()
     }
     
-    func configureNavBar() {
-        ConfigureNavBarAppearance()
-        // TODO: Set title from character name
-        if let id = viewModel?.id { title = String(format: "ID: %d - Detail View", id) }
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        //navigationController?.navigationItem.hidesBackButton = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(backTapped))
+    private func configureNavBar() {
+        //if let id = viewModel?.id { title = String(format: "%d Detail", id) }
+        navigationItem.backBarButtonItem?.title = "backTitleDetail"
     }
     
-    private func ConfigureNavBarAppearance() {
-
-        let appearance = UINavigationBarAppearance()
-
-        // fonts for navigationbar titles
-        appearance.largeTitleTextAttributes = [
-            .font: UIFont.AppFont.largeTitle,
-            .foregroundColor: UIColor.barTitles]
-        appearance.titleTextAttributes = [
-            .font: UIFont.AppFont.compactTitle,
-            .foregroundColor: UIColor.barTitles]
-
-        // back button
-        appearance.setBackIndicatorImage(
-            UIImage(systemName: AppConfig.barBack), transitionMaskImage:
-            UIImage(systemName: AppConfig.barBackTrans))
-        appearance.backButtonAppearance.normal.titleTextAttributes = [
-            .font: UIFont.AppFont.barButton,
-            .foregroundColor: UIColor.barButton]
-
-        // transparency
-        appearance.configureWithTransparentBackground()
-
-        // apply appearance
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().compactAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-    }
-
     private func setupViewModel() {
         guard let viewModel = viewModel else { return }
         let state = viewModel.state.asObservable()
@@ -72,11 +54,11 @@ class DetailViewController: UIViewController {
         state.subscribe(onNext: { (state) in
             switch state {
                 case .loading:
-                    //TODO: ActivityIndicator start, isHidden and hidesWhenStopped
+                    // TODO: ActivityIndicator start, isHidden and hidesWhenStopped
                     debugPrint("Loading State in DetailViewController…")
                     break
                 case .error(let error):
-                    //TODO: show error message and stop ActivityIndicator
+                    // TODO: show error message and stop ActivityIndicator
                     self.showErrorMessage(error)
                 case .loaded:
                     debugPrint("Loaded State in DetailViewController")
@@ -91,7 +73,7 @@ class DetailViewController: UIViewController {
         debugPrint("showErrorMessage() in DetailViewController…")
     }
     
-    @objc private func backTapped() {
+    private func backTapped() {
         viewModel?.closeModule()
     }
     

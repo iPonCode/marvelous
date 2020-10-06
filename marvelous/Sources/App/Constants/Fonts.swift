@@ -50,7 +50,7 @@ extension UIFont {
             }
         }
 
-        static var barButton: UIFont {
+        static var backBarButton: UIFont {
             get {
                 let fontSize = UIFont.preferredFont(forTextStyle: .title3).pointSize
                 if let descriptor = UIFont.systemFont(ofSize: fontSize, weight: .bold)
@@ -62,6 +62,19 @@ extension UIFont {
                 }
             }
         }
-        
+
+        static var rightBarButton: UIFont {
+            get {
+                let fontSize = UIFont.preferredFont(forTextStyle: .title3).pointSize
+                if let descriptor = UIFont.systemFont(ofSize: fontSize, weight: .regular)
+                    .fontDescriptor.withDesign(.rounded) {
+                    return UIFont(descriptor: descriptor, size: fontSize)
+
+                } else {
+                    return UIFont.preferredFont(forTextStyle: .headline)
+                }
+            }
+        }
+
     }
 }

@@ -5,7 +5,6 @@
 //  Copyright © 2020 iPon.es. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import Alamofire
 
@@ -33,7 +32,7 @@ enum ListState : Equatable {
     case loading
     case error (ErrorResponse)
     case loaded
-    // TODO: maybe will need to additional checks (like jailbroken device, App needToUpdate, etc..)
+    // TODO: maybe will need additional checks (like jailbroken device, App needs an update, etc..)
 
     static func == (lhs: ListState, rhs: ListState) -> Bool { // to conform Equatable
         switch (lhs, rhs) {
