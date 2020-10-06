@@ -16,7 +16,6 @@ class ListViewController: UIViewController {
     private var isNavBarSettedToHidden = false // Default value for navBar visibility
     private var refreshControl = UIRefreshControl()
     
-    private let emptyOrNilDescription = "This character has an empty or nil description, this is a text to supply it …"
     private let pullToText = "Pull to show navBar"
     private let listTitle = "The Marvel List"
 
@@ -144,10 +143,10 @@ extension ListViewController: UITableViewDataSource {
                              String(charty.thumbnail?.thumbnailExtension ?? ""))
             
             cell.configure(id: charty.id, imageUrl: url,
-                           name: charty.name ?? "nil Name",
+                           name: charty.name ?? AppConfig.nilName,
                            description: isEmptyDescription ?
-                                        emptyOrNilDescription :
-                                        charty.resultDescription ?? emptyOrNilDescription,
+                                        AppConfig.emptyOrNilDescription :
+                                        charty.resultDescription ?? AppConfig.emptyOrNilDescription,
                            comics: charty.comics.items.count,
                            events: charty.events?.count ?? 0,
                            series: charty.events?.count ?? 0)

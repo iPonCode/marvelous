@@ -30,6 +30,15 @@ struct AppConfig {
     static let screenWidth = screenSize.width
     static let screenHeight = screenSize.height
     static let halftScreenHeight = screenSize.height / 2
+    
+    static let maxHeaderImageHeight = screenHeight - ((screenHeight * 30) / 100)
+    
+    // Default texts
+    static let emptyOrNilDescription = "This character has an empty or nil description, this is a text to supply it …"
+    static let nilName = "nil Name"
+    
+    // Url Images
+    static let imgNotAvailablePattern = "image_not_available"
 
     private init() {}
     

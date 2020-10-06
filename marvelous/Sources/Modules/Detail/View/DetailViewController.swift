@@ -9,7 +9,15 @@ import UIKit
 import RxSwift
 
 class DetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var headerImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var headerImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var id: UILabel!
+    @IBOutlet weak var resultDescription: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    
     weak var coordinator: DetailCoordinator?
     var viewModel: DetailViewModel?
     let disposeBag = DisposeBag()
@@ -38,12 +46,13 @@ class DetailViewController: UIViewController {
     private func configureView() {
 
         view.backgroundColor = UIColor.backGroundDetail
-        configureNavBar()
-    }
-    
-    private func configureNavBar() {
-        //if let id = viewModel?.id { title = String(format: "%d Detail", id) }
-        navigationItem.backBarButtonItem?.title = "backTitleDetail"
+        headerImageHeight.constant = AppConfig.maxHeaderImageHeight
+        name.font = UIFont.AppFont.largeTitle
+        id.font = UIFont.AppFont.compactTitle
+        id.textColor = UIColor.secondaryLabel
+        resultDescription.font = UIFont.AppFont.bodyText
+        
+        segmentedControl.setTitleTextAttributes([.font:UIFont.AppFont.segmentedText], for: .normal)
     }
     
     private func setupViewModel() {
@@ -62,11 +71,43 @@ class DetailViewController: UIViewController {
                     self.showErrorMessage(error)
                 case .loaded:
                     debugPrint("Loaded State in DetailViewController")
+                    self.paintData()
                 }
             }).disposed(by: disposeBag)
         
         // Request Detail data from webservice
         viewModel.requestData(scheduler: MainScheduler.instance)
+    }
+    
+    private func paintData() {
+        
+        guard let charty = viewModel?.charty else { return }
+        
+        name.text = charty.name
+        id.text = String(charty.id)
+        resultDescription.text = charty.resultDescription.isEmpty ?
+                                 AppConfig.emptyOrNilDescription :
+                                 charty.resultDescription
+        
+        let url = String(format: "%@.%@",
+                         String(charty.thumbnail.path),
+                         String(charty.thumbnail.thumbnailExtension))
+
+        // Try to load image from the url
+        guard let imageUrl = URL(string: url) else {
+            setPlaceholderForHeaderImage()
+            return
+        }
+        
+        // If webservice returns a valid url image for not avilable, prefer use own placeholder
+        imageUrl.absoluteString.contains(AppConfig.imgNotAvailablePattern) ?
+            setPlaceholderForHeaderImage() :
+            headerImage.af.setImage(withURL: imageUrl)
+        
+    }
+    
+    private func setPlaceholderForHeaderImage() {
+        headerImage.image = UIImage(named: "placeholder-header")
     }
     
     private func showErrorMessage(_ error: ErrorResponse) { // TODO: Show error message to user
