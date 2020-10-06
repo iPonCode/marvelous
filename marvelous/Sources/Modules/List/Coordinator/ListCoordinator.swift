@@ -35,7 +35,8 @@ class ListCoordinator: Coordinator {
             childCoordinators.enumerated() {
                 // needs conform to AnyObject and returns true only if its exactly the same object instance
                 if coordinator === child {
-                    navigationController.popViewController(animated: true)
+                    // This popViewController it's not necessary when child is using default back button action
+                    //navigationController.popViewController(animated: true)
                     childCoordinators.remove(at: index)
                     break
                 }

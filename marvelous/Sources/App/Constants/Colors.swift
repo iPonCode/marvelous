@@ -16,8 +16,8 @@ extension UIColor {
     static let barButton = UIColor.systemBlue
     static let barTitles = UIColor.systemBlue
     
-    static let backGroundList = UIColor.gray //purple
-    static let backGroundDetail = UIColor.systemTeal //systemIndigo
+    static let backGroundList = UIColor.systemBackground
+    static let backGroundDetail = UIColor.systemBackground
 
 }
 

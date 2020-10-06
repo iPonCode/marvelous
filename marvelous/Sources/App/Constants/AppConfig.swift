@@ -5,7 +5,6 @@
 //  Copyright © 2020 iPon.es. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // MARK: - App Configuration
@@ -13,8 +12,9 @@ import UIKit
 struct AppConfig {
     
     // Bar buttons
-    static let barBack = "rectangle.grid.1x2.fill"
-    static let barBackTrans = "rectangle.grid.1x2"
+    static let barBack = "chevron.left"
+    static let barBackTrans = "chevron.left.2"
+    static let barRightList = "rectangle.compress.vertical"
     static let barShowOptions = "table.badge.more.fill"
     static let barSaveOptions = "rectangle.fill.badge.checkmark"
     static let barCloseOptions = "table.badge.more.fill"
@@ -30,6 +30,15 @@ struct AppConfig {
     static let screenWidth = screenSize.width
     static let screenHeight = screenSize.height
     static let halftScreenHeight = screenSize.height / 2
+    
+    static let maxHeaderImageHeight = screenHeight - ((screenHeight * 30) / 100)
+    
+    // Default texts
+    static let emptyOrNilDescription = "This character has an empty or nil description, this is a text to supply it …"
+    static let nilName = "nil Name"
+    
+    // Url Images
+    static let imgNotAvailablePattern = "image_not_available"
 
     private init() {}
     

@@ -23,7 +23,6 @@ class ListCell: UITableViewCell, ListCellProtocol {
     @IBOutlet weak var numEvents: UILabel!
     @IBOutlet weak var numSeries: UILabel!
     
-    // This occurs when the xib is ready
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -51,7 +50,7 @@ class ListCell: UITableViewCell, ListCellProtocol {
             return
         }
         
-        // Have bgUrl, so try to load poster image from the url
+        // Have bgUrl, so try to load image from the url
         guard let url = URL(string: bgUrl) else {
             return
         }
