@@ -55,8 +55,10 @@ class DetailViewModel: DetailViewModelProtocol {
         guard let id = id,
               let url = URL(string: MarvelApi.getDetailsUrl(id)) else { return }
 
-        AF.request(url).responseJSON { response in
-        
+        AF.request(url).responseJSON { [weak self] response in
+            // here needs weak self to don't have a strong reference to self when this closure run
+            guard let weakSelf = self else { return }
+
             guard let serverData = response.data,
                   let networkResponse = try? JSONDecoder().decode(NetworkDetailResponseDTO.self, from: serverData) else {
         
@@ -64,22 +66,22 @@ class DetailViewModel: DetailViewModelProtocol {
                       let errorObject = try? JSONDecoder().decode(ErrorResponse.self, from: serverData) else {
                     
                     // Cannot decode the current error message, save generic error when don't know what error it is
-                    self.serverError.code = "Generic"
-                    self.serverError.message = "Generic server error - Cannot decode error message"
-                    self.state.onNext(.error(self.serverError))
+                    weakSelf.serverError.code = "Generic"
+                    weakSelf.serverError.message = "Generic server error - Cannot decode error message"
+                    weakSelf.state.onNext(.error(weakSelf.serverError))
                     return
                 }
         
                 // Save any other error, when know what error it is
-                self.serverError = errorObject
-                self.state.onNext(.error(self.serverError))
+                weakSelf.serverError = errorObject
+                weakSelf.state.onNext(.error(weakSelf.serverError))
                 return
             }
             
             DispatchQueue.main.async {
                 if let char = networkResponse.data?.results.first {
-                    self.charty = char
-                    self.state.onNext(.loaded)
+                    weakSelf.charty = char
+                    weakSelf.state.onNext(.loaded)
                 }
             }
         }
