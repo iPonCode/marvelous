@@ -13,6 +13,10 @@
 > *"Data provided by Marvel. © 2014 Marvel"*
 
 ## Changelog
+### 1.0.1
+- [x] Fixed weak reference to self in AF closures
+- [x] Added some Unit Test
+
 ### 1.0.0
 - [x] Listing some charcters from webservice using a UItableView
 - [x] Display basic character details, large header design with a photo ignoring safe area edges that fits full screen
