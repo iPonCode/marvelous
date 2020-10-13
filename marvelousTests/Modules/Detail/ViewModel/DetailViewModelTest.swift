@@ -1,9 +1,11 @@
-//  ListViewModelTest.swift
+//  DetailViewModelTest.swift
 //  marvelousTests
 //
-//  Created by Simón Aparicio on 12/10/2020.
+//  Created by Simón Aparicio on 13/10/2020.
 //  Copyright © 2020 iPon.es. All rights reserved.
 //
+
+import XCTest
 
 import XCTest
 import RxTest
@@ -12,17 +14,17 @@ import RxCocoa
 
 @testable import marvelous
 
-class ListViewModelTest: XCTestCase {
+class DetailViewModelTest: XCTestCase {
 
     private var scheduler: TestScheduler!
-    private var viewState: TestableObserver<ListState>!
+    private var viewState: TestableObserver<DetailState>!
     private var disposeBag: DisposeBag!
 
     override func setUp() {
         
         super.setUp()
         scheduler = TestScheduler(initialClock: 0)
-        viewState = scheduler.createObserver(ListState.self)
+        viewState = scheduler.createObserver(DetailState.self)
         disposeBag = DisposeBag()
     }
 
@@ -34,8 +36,9 @@ class ListViewModelTest: XCTestCase {
 
     func testLoading(){
         
-        let viewModel =  ListViewModel()
-        
+        let viewModel =  DetailViewModel()
+        viewModel.id = 1011334
+
         // Given
         viewModel.state
             .bind(to: viewState)
@@ -48,12 +51,13 @@ class ListViewModelTest: XCTestCase {
         // Then
         let state = (viewState.events[0].value).element!
 
-        XCTAssertEqual(state, ListState.loading)
+        XCTAssertEqual(state, DetailState.loading)
     }
     
     func testLoaded() {
         
-        let viewModel = ListViewModel()
+        let viewModel = DetailViewModel()
+        viewModel.id = 1011334
         
         // Given
         viewModel.state
@@ -71,8 +75,8 @@ class ListViewModelTest: XCTestCase {
             switch state {
                 case .loaded:
                     XCTAssertEqual(self.viewState.events, [
-                                    .next(0, ListState.loading),
-                                    .next(1, ListState.loaded)
+                                    .next(0, DetailState.loading),
+                                    .next(1, DetailState.loaded)
                                     ])
                 default:
                     XCTFail()
