@@ -25,6 +25,7 @@
 		D02179F72529F85700F07E8B /* MarvelDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179F62529F85700F07E8B /* MarvelDTOs.swift */; };
 		D02179FF2529F88000F07E8B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02179FE2529F88000F07E8B /* ErrorResponse.swift */; };
 		D084E0992534C65400E3C992 /* ListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084E0982534C65400E3C992 /* ListViewModelTest.swift */; };
+		D084E10525352CC100E3C992 /* ListCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084E10425352CC100E3C992 /* ListCoordinatorTest.swift */; };
 		D0F3BFD5252A191E00B1A5A6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFD4252A191E00B1A5A6 /* AppCoordinator.swift */; };
 		D0F3BFE4252A22E700B1A5A6 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */; };
 		D0F3BFE9252A24D100B1A5A6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */; };
@@ -88,6 +89,7 @@
 		D02179F62529F85700F07E8B /* MarvelDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDTOs.swift; sourceTree = "<group>"; };
 		D02179FE2529F88000F07E8B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D084E0982534C65400E3C992 /* ListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTest.swift; sourceTree = "<group>"; };
+		D084E10425352CC100E3C992 /* ListCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinatorTest.swift; sourceTree = "<group>"; };
 		D0F3BFD4252A191E00B1A5A6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D0F3BFE3252A22E700B1A5A6 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		D0F3BFE8252A24D100B1A5A6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 		D084E0972534C60900E3C992 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				D084E10425352CC100E3C992 /* ListCoordinatorTest.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D084E10525352CC100E3C992 /* ListCoordinatorTest.swift in Sources */,
 				D084E0992534C65400E3C992 /* ListViewModelTest.swift in Sources */,
 				D021798E25291AFA00F07E8B /* marvelousTests.swift in Sources */,
 			);
