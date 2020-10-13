@@ -30,8 +30,8 @@ enum ListAction : Equatable {
 enum ListState : Equatable {
     
     case loading
-    case error (ErrorResponse)
     case loaded
+    case error (ErrorResponse)
     // TODO: maybe will need additional checks (like jailbroken device, App needs an update, etc..)
 
     static func == (lhs: ListState, rhs: ListState) -> Bool { // to conform Equatable
