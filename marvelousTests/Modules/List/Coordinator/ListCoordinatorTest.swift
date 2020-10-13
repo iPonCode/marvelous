@@ -29,7 +29,6 @@ class ListCoordinatorTest: XCTestCase {
         coordinator.start()
         XCTAssertNotNil(navigationController.viewControllers.last as? ListViewController)
         
-        // wait for start request data
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
             coordinator.didStop()
             XCTAssertNil(self.navigationController.viewControllers.last as? ListViewController)

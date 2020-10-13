@@ -7,26 +7,32 @@
 
 import XCTest
 
+@testable import marvelous
+
 class DetailCoordinatorTest: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var navigationController: UINavigationController!
+    
+    override func setUp() {
+        
+        super.setUp()
+        navigationController = UINavigationController()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        navigationController = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testStartStop() {
+        
+        let coordinator = DetailCoordinator(navigationController: navigationController, id: 1011334)
+        coordinator.start()
+        XCTAssertNotNil(navigationController.viewControllers.last as? DetailViewController)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            coordinator.didStop()
+            XCTAssertNil(self.navigationController.viewControllers.last as? DetailViewController)
         }
     }
-
+    
 }
